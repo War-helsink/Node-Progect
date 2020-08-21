@@ -1,0 +1,38 @@
+div.grid{
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+   
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+ion-label.game{
+    border:1px solid var(--ion-color-base);
+  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+ion-label.game span{
+    font-size: 1em;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+div.item-native{
+    border-width: 0px;
+    border-style: none;
+    --border-width: 0px;
+    --border-style: none;
+    padding: 0px;
+    --padding:0px;
+}
+div.item-native div.item-inner {
+    border-width: 0px;
+    border-style: none;
+    --border-width: 0px;
+    --border-style: none;
+}
