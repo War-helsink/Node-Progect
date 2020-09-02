@@ -9,7 +9,6 @@ div.grid{
 }
 ion-label.game{
     border:1px solid var(--ion-color-base);
-  
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);

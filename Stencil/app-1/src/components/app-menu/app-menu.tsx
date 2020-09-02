@@ -1,6 +1,5 @@
 import { Component, Prop,h} from '@stencil/core';
 
-
 @Component({
   tag: 'app-menu',
   styleUrl: 'app-menu.scss'
@@ -8,8 +7,7 @@ import { Component, Prop,h} from '@stencil/core';
 
     
 export class AppMenu{
-  @Prop() name_menu:string;
-
+  @Prop() name_menu: string;
   
 
   render() {

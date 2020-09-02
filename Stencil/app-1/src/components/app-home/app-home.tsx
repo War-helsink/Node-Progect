@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h ,Prop} from '@stencil/core';
 
 @Component({
   tag: 'app-home',
@@ -8,28 +8,23 @@ import { Component, h } from '@stencil/core';
 
 
 export class AppHome {
-  titleName(text) {
-    document.title = text;
-  }
+  @Prop() id_tema:number;
+  @Prop() id_articles: number;
+  
 
 
   render() {
-    this.titleName("Home");
+  
     return [
       <ion-content>
         <ion-grid fixed>
           <ion-row>
             <ion-col size="12" size-lg="10">
-
-              <app-articles></app-articles>
-
+              <app-articles id_tema={this.id_tema} id_articles={this.id_articles} />
             </ion-col>
 
             <ion-col size="12" size-lg="2">
-
-              <app-sitebar></app-sitebar>
-
-              <app-sitebar></app-sitebar>
+              <app-sitebar />
             </ion-col>
 
           </ion-row>

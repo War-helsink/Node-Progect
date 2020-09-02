@@ -7,21 +7,34 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppArticles {
+        "id_articles": number;
+        "id_tema": number;
+    }
+    interface AppComent {
+    }
+    interface AppComents {
+        "idComent": number;
     }
     interface AppGame {
     }
     interface AppHeader {
     }
     interface AppHome {
+        "id_articles": number;
+        "id_tema": number;
     }
     interface AppMenu {
         "name_menu": string;
+    }
+    interface AppRegistration {
+        "jsons": any;
     }
     interface AppRoot {
     }
     interface AppSitebar {
     }
     interface AppUser {
+        "jsons": any;
     }
     interface DarkMode {
     }
@@ -34,6 +47,18 @@ declare global {
     var HTMLAppArticlesElement: {
         prototype: HTMLAppArticlesElement;
         new (): HTMLAppArticlesElement;
+    };
+    interface HTMLAppComentElement extends Components.AppComent, HTMLStencilElement {
+    }
+    var HTMLAppComentElement: {
+        prototype: HTMLAppComentElement;
+        new (): HTMLAppComentElement;
+    };
+    interface HTMLAppComentsElement extends Components.AppComents, HTMLStencilElement {
+    }
+    var HTMLAppComentsElement: {
+        prototype: HTMLAppComentsElement;
+        new (): HTMLAppComentsElement;
     };
     interface HTMLAppGameElement extends Components.AppGame, HTMLStencilElement {
     }
@@ -58,6 +83,12 @@ declare global {
     var HTMLAppMenuElement: {
         prototype: HTMLAppMenuElement;
         new (): HTMLAppMenuElement;
+    };
+    interface HTMLAppRegistrationElement extends Components.AppRegistration, HTMLStencilElement {
+    }
+    var HTMLAppRegistrationElement: {
+        prototype: HTMLAppRegistrationElement;
+        new (): HTMLAppRegistrationElement;
     };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
@@ -91,10 +122,13 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-articles": HTMLAppArticlesElement;
+        "app-coment": HTMLAppComentElement;
+        "app-coments": HTMLAppComentsElement;
         "app-game": HTMLAppGameElement;
         "app-header": HTMLAppHeaderElement;
         "app-home": HTMLAppHomeElement;
         "app-menu": HTMLAppMenuElement;
+        "app-registration": HTMLAppRegistrationElement;
         "app-root": HTMLAppRootElement;
         "app-sitebar": HTMLAppSitebarElement;
         "app-user": HTMLAppUserElement;
@@ -104,21 +138,34 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppArticles {
+        "id_articles"?: number;
+        "id_tema"?: number;
+    }
+    interface AppComent {
+    }
+    interface AppComents {
+        "idComent"?: number;
     }
     interface AppGame {
     }
     interface AppHeader {
     }
     interface AppHome {
+        "id_articles"?: number;
+        "id_tema"?: number;
     }
     interface AppMenu {
         "name_menu"?: string;
+    }
+    interface AppRegistration {
+        "jsons"?: any;
     }
     interface AppRoot {
     }
     interface AppSitebar {
     }
     interface AppUser {
+        "jsons"?: any;
     }
     interface DarkMode {
     }
@@ -126,10 +173,13 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-articles": AppArticles;
+        "app-coment": AppComent;
+        "app-coments": AppComents;
         "app-game": AppGame;
         "app-header": AppHeader;
         "app-home": AppHome;
         "app-menu": AppMenu;
+        "app-registration": AppRegistration;
         "app-root": AppRoot;
         "app-sitebar": AppSitebar;
         "app-user": AppUser;
@@ -142,10 +192,13 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-articles": LocalJSX.AppArticles & JSXBase.HTMLAttributes<HTMLAppArticlesElement>;
+            "app-coment": LocalJSX.AppComent & JSXBase.HTMLAttributes<HTMLAppComentElement>;
+            "app-coments": LocalJSX.AppComents & JSXBase.HTMLAttributes<HTMLAppComentsElement>;
             "app-game": LocalJSX.AppGame & JSXBase.HTMLAttributes<HTMLAppGameElement>;
             "app-header": LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-menu": LocalJSX.AppMenu & JSXBase.HTMLAttributes<HTMLAppMenuElement>;
+            "app-registration": LocalJSX.AppRegistration & JSXBase.HTMLAttributes<HTMLAppRegistrationElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "app-sitebar": LocalJSX.AppSitebar & JSXBase.HTMLAttributes<HTMLAppSitebarElement>;
             "app-user": LocalJSX.AppUser & JSXBase.HTMLAttributes<HTMLAppUserElement>;

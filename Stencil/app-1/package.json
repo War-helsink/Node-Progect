@@ -9,14 +9,14 @@
   ],
   "scripts": {
     "build": "stencil build",
-    "start": "stencil build --dev --watch --serve --port=80",
+    "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watch",
     "generate": "stencil generate"
   },
   "devDependencies": {
     "@ionic/core": "^5.0.7",
-    "@stencil/core": "^1.12.2",
+    "@stencil/core": "^1.17.3",
     "@stencil/sass": "^1.3.2"
   }
 }

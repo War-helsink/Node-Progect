@@ -20,6 +20,8 @@ export class AppGame {
     @State() save = [];
     @State() move_save = [true,false,true,false,true,false,true,false,true];
     
+
+
     nextMove(index) {
         if (this.mas[index] == "") {
             let f = [];

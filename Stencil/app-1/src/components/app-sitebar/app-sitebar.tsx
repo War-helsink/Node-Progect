@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h,State } from '@stencil/core';
 
 @Component({
     tag: 'app-sitebar',
@@ -7,21 +7,42 @@ import { Component, h } from '@stencil/core';
 
 
 export class AppSitebar {
-    onClickSitebar(event) {
-        alert(event.type);
-        
+    @State() sitebar;
+
+    
+    async jsonArticles() {
+        let response = await fetch('/sitebar/');
+        if (response.ok) {
+            let json = await response.json();
+
+            
+            return json;
+        } else {
+            
+        }
 
     }
+    connectedCallback() {
+        if (!this.sitebar) 
+            this.jsonArticles().then((json) => {
+                this.sitebar = json;
+            });
+    }
+
+
+
+
 
 
     generationSitebar() {
         let sitebar = [];
-        for (let i = 0; i < 10; i++)
-            sitebar.push(
-                <ion-item button onClick={(ev) => this.onClickSitebar(ev)} class="" lines="none" color="dark">
-                    <ion-label>Sitebar</ion-label>
-                </ion-item>
-            );
+        if(this.sitebar)
+            for (let i = 0; i < this.sitebar.length; i++)
+                sitebar.push(
+                    <ion-item  button href={`/topic/${this.sitebar[i].id}`} class="" lines="none" color="dark">
+                        <ion-label>{this.sitebar[i].name_title}</ion-label>
+                    </ion-item>
+                );
 
         return sitebar;
     }
