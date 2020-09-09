@@ -141,7 +141,7 @@ export class AppGame {
     }
 
     render() {
-        document.title = "Game";
+        
 
         this.sendMessage();
         return [

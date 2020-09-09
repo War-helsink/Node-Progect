@@ -1,4 +1,4 @@
-import { Component, h ,Prop} from '@stencil/core';
+import { Component, h ,Prop, State} from '@stencil/core';
 
 @Component({
   tag: 'app-home',
@@ -8,6 +8,7 @@ import { Component, h ,Prop} from '@stencil/core';
 
 
 export class AppHome {
+  @State() obnow;
   @Prop() id_tema:number;
   @Prop() id_articles: number;
   
@@ -20,7 +21,7 @@ export class AppHome {
         <ion-grid fixed>
           <ion-row>
             <ion-col size="12" size-lg="10">
-              <app-articles id_tema={this.id_tema} id_articles={this.id_articles} />
+              <app-articles obnowFuctions={() => { this.obnow++; }} id_tema={this.id_tema} id_articles={this.id_articles} />
             </ion-col>
 
             <ion-col size="12" size-lg="2">

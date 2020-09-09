@@ -6,14 +6,24 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppArticle {
+        "json": any;
+        "onlikeClick": any;
+    }
     interface AppArticles {
         "id_articles": number;
         "id_tema": number;
+        "obnowFuctions": any;
     }
     interface AppComent {
+        "id_articles": any;
+        "obnowFuctions": any;
+        "user": any;
     }
     interface AppComents {
         "idComent": number;
+        "obnowFuctions": any;
+        "sendMessages": any;
     }
     interface AppGame {
     }
@@ -42,6 +52,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAppArticleElement extends Components.AppArticle, HTMLStencilElement {
+    }
+    var HTMLAppArticleElement: {
+        prototype: HTMLAppArticleElement;
+        new (): HTMLAppArticleElement;
+    };
     interface HTMLAppArticlesElement extends Components.AppArticles, HTMLStencilElement {
     }
     var HTMLAppArticlesElement: {
@@ -121,6 +137,7 @@ declare global {
         new (): HTMLMyFabElement;
     };
     interface HTMLElementTagNameMap {
+        "app-article": HTMLAppArticleElement;
         "app-articles": HTMLAppArticlesElement;
         "app-coment": HTMLAppComentElement;
         "app-coments": HTMLAppComentsElement;
@@ -137,14 +154,24 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AppArticle {
+        "json"?: any;
+        "onlikeClick"?: any;
+    }
     interface AppArticles {
         "id_articles"?: number;
         "id_tema"?: number;
+        "obnowFuctions"?: any;
     }
     interface AppComent {
+        "id_articles"?: any;
+        "obnowFuctions"?: any;
+        "user"?: any;
     }
     interface AppComents {
         "idComent"?: number;
+        "obnowFuctions"?: any;
+        "sendMessages"?: any;
     }
     interface AppGame {
     }
@@ -172,6 +199,7 @@ declare namespace LocalJSX {
     interface MyFab {
     }
     interface IntrinsicElements {
+        "app-article": AppArticle;
         "app-articles": AppArticles;
         "app-coment": AppComent;
         "app-coments": AppComents;
@@ -191,6 +219,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-article": LocalJSX.AppArticle & JSXBase.HTMLAttributes<HTMLAppArticleElement>;
             "app-articles": LocalJSX.AppArticles & JSXBase.HTMLAttributes<HTMLAppArticlesElement>;
             "app-coment": LocalJSX.AppComent & JSXBase.HTMLAttributes<HTMLAppComentElement>;
             "app-coments": LocalJSX.AppComents & JSXBase.HTMLAttributes<HTMLAppComentsElement>;
