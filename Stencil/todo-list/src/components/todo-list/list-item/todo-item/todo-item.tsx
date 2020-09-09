@@ -2,8 +2,10 @@ import { Component, h, Prop, EventEmitter, Event, State } from "@stencil/core";
 import { TodoRead } from "../../models";
 
 @Component({
-  tag: "todo-item"
+  tag: "todo-item",
+  styleUrl: 'todo-item.css',
 })
+  
 export class TodoList {
   @Prop() todoRead: TodoRead;
   @Prop() description: any;
@@ -13,18 +15,23 @@ export class TodoList {
   @State() newValue;
   value: any;
   text: any;
+  descriptionBoolean: boolean = false;
 
   @Event() changeIsDone: EventEmitter;
 
-  changeItemValue(item) {
-
+  changeItemValue(item, event) {
+    if (this.description.description !== '' && this.description.description !== undefined) {
+      let element: any = event.path[1];
+      let obj = { "target": element.querySelector(".descriptions") }
+      this.descriptionOpen(obj, true);
+    }
     this.newValue = (
-      <div>
-         <textarea onInput={(el) => { this.text = el.target }} placeholder="Description..." ></textarea>
+      <div class="new-value">
+        <textarea onInput={(el) => { this.text = el.target }} placeholder="Description..." ></textarea>
         <input onInput={(el) => { this.value = el.target }} type="text" ></input>
         <button onClick={() => {
           if (this.value.value != undefined) {
-            this.changeItem(item, this.value.value,  this.text.value );
+            this.changeItem(item, this.value.value, this.text.value);
             this.newValue = undefined;
           }
         }}>✓</button>
@@ -33,25 +40,29 @@ export class TodoList {
     );
   }
 
+  descriptionOpen(event, value) {
+    let button: any = event.target;
+    if ( value) {
+      button.textContent = "▶";
+      this.element = undefined;
+    }
+    else {
+      button.textContent = "▼";
+      this.element = [
+        <div class="description">
+          {this.description.description}
+        </div>
+      ];
+    }
+    this.descriptionBoolean = !this.descriptionBoolean;
+  }
+  
+
+
   descriptionPrint() {
     if (this.description.description !== '' && this.description.description !== undefined) {
-      console.log("Print ", this.description.description);
       return (
-        <button onClick={(event) => {
-          let button: any = event.target;
-          if (button.textContent === "▼") {
-            button.textContent = "▶";
-            this.element = undefined;
-          }
-          else {
-            button.textContent = "▼";
-            this.element = [
-              <div>
-                <textarea  placeholder="Description..." > {this.description.description}</textarea>
-              </div>
-            ];
-          }
-        }}>▶</button>
+        <button class="descriptions" onClick={(event) => { this.descriptionOpen(event, this.descriptionBoolean);}}>▶</button>
       )
 
     }
@@ -63,7 +74,7 @@ export class TodoList {
   todoButton(item) {
     if (this.todoRead.isRead) {
       return [
-        <button onClick={() => this.changeItemValue(item)}>✎</button>,
+        <button onClick={(event) => this.changeItemValue(item, event)}>✎</button>,
         <button onClick={() => this.deleteItem(item)}>✘</button>,
         this.newValue,
       ]
@@ -72,8 +83,6 @@ export class TodoList {
 
 
   render() {
-    console.log('item render', this.description);
-    console.log('item element', this.element);
     return [
       this.descriptionPrint(),
       <input type="checkbox" checked={this.description.isDone} onChange={() => this.changeIsDone.emit({ id: this.description.id, value: !this.description.isDone })} />,

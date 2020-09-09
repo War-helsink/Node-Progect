@@ -16,7 +16,7 @@ export class TodoList {
   ];
   @State() todoRead: TodoRead = {
     name: "item",
-    isRead: true 
+    isRead: false 
   }
 
 
@@ -64,9 +64,9 @@ export class TodoList {
           <button onClick={(event) => {
             let text;
             if (this.todoRead.isRead)
-              text = "change";
+              text ="only read" ;
             else
-              text = "only read";
+              text = "change";
             this.todoRead.isRead = !this.todoRead.isRead;
             this.todoRead = { ...this.todoRead };
             let button: any = event.target;

@@ -8,9 +8,11 @@ import { Component, h } from '@stencil/core';
 export class AppRoot {
   render() {
     return (
-     
+      <div class="flex-div">
+        <div>
           <todo-list />
-     
+        </div>
+      </div>
     );
   }
 }
