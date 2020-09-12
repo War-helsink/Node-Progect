@@ -25,7 +25,7 @@ export class AppRoot {
 
 
 
-          <ion-router useHash >
+          <ion-router useHash={false} >
             <ion-route-redirect from="/" to="/articles/"></ion-route-redirect>
             <ion-route url="/articles/" component="app-home" ></ion-route>
             <ion-route url="/articles/:id_articles" component="app-home" ></ion-route>
