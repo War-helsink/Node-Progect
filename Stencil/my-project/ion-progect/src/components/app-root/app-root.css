@@ -1,0 +1,25 @@
+.flex{
+    display: flex;
+    flex-direction: row;   
+}
+.flex-center{
+    justify-content:center;
+    align-items: center;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.margin-left{
+    margin-left:16px
+}
+.pixsel{
+    max-width:1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.radius{
+    border-radius: 4px;
+}
+.margin-auto{
+    margin:auto 16px auto 0px;
+}

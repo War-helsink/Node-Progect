@@ -1,0 +1,1 @@
+import{r as o,h as e}from "./p-edd43e6c.js";const r=class{constructor(e){o(this,e)}render(){return console.log("render",this.uid),[e("div",null,e("ion-router-link",{href:"/todo-list"},"second-page"),e("todo-list",null))]}};export{r as second_page}

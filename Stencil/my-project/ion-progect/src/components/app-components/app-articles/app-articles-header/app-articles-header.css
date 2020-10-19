@@ -1,0 +1,69 @@
+.header-item{
+    min-height:50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    --padding-start: 20px;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.header-item:hover{
+    background-color:rgba(59, 57, 57, 0.315);
+    cursor: pointer;
+}
+
+
+.form-button{
+    line-height: normal;
+    color: #fff;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    cursor: pointer;
+    font-size: 18px;
+    outline: none;
+    border:none;  
+}
+.form-button:hover{
+    background-color: #02c456;
+}
+
+.border-radius-right{
+    border-bottom-right-radius:4px;
+    border-top-right-radius:4px;
+}
+
+.border-radius-left{
+    border-bottom-left-radius:4px;
+    border-top-left-radius:4px;
+}
+.height{
+    height:36px;
+}
+
+
+@media screen and (max-width: 600px) {
+    /* Доработать адаптивною верстку */
+    .margin-auto{
+        margin: 10px auto 10px auto;
+    }
+    .flex-adept{
+        justify-content:center;
+        align-items: center;
+    }
+}
+
+
+.green{
+    background-color: #00a046;
+}
+
+.red{
+   background-color:white;
+}
+.red:hover{
+    background-color:white;
+}

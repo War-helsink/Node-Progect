@@ -1,0 +1,46 @@
+.border-center{
+    border-right: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+
+}
+.img-div{
+    margin-top: 1%;
+}
+.content-price{
+    font-size: 20px;
+    color:#f84147;
+}
+
+.content-name{
+    line-height: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color:#221f1f;
+}
+.block{
+    display: block;
+}
+.specifications{
+    font-size: 14px;
+    line-height: 16px;
+}
+.color{
+    
+}
+.size{
+    
+}
+.weight{
+   
+}
+
+.date{
+    color: #00a046;
+
+}
+.link{
+    padding: 5px;
+    margin-left: 10px;
+}
+

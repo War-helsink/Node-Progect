@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Admin</title>
+
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description"
+    content="Welcome to the Ionic PWA Toolkit. You can use this starter to build fast PWAs using Ionic and Stencil!">
+  <meta name="theme-color" content="#16161d">
+
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ionic PWA">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta http-equiv="x-ua-compatible" content="IE=Edge">
+
+  <script type="module" src="/build/app.esm.js"></script>
+  <script nomodule src="/build/app.js"></script>
+
+  <link href="/build/app.css" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
+  
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBZXkXMw0IvIrwmcUQqGZVZDv3Xh8hKRbs",
+      authDomain: "ninja-gamma.firebaseapp.com",
+      databaseURL: "https://ninja-gamma.firebaseio.com",
+      projectId: "ninja-gamma",
+      storageBucket: "ninja-gamma.appspot.com",
+      messagingSenderId: "398338865302",
+      appId: "1:398338865302:web:a3619501107e261250aab7"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+
+
+
+</head>
+
+<body>
+
+  <app-root></app-root>
+
+</body>
+
+</html>

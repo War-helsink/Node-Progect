@@ -1,0 +1,46 @@
+.border-telbel{
+    border-left: 1px solid #e9e9e9;
+    border-top: 1px solid #e9e9e9;
+}
+.flex-item{
+    flex-grow: 1;
+    flex-basis: 30%;
+    padding: 20px;
+}
+
+
+.flex-filter{
+   
+    flex-grow:1;
+}
+.flex-print{
+    flex-grow:9;
+}
+
+@media screen and (max-width: 600px) {
+    /* Доработать адаптивною верстку */
+    .display {
+        display: none;
+    }
+}
+.inline-block{
+    display: inline-block;
+}  
+
+
+
+.flex-element{
+    flex-grow:1;
+
+}
+.margin{
+    margin: 40px 0px 0px 0px; 
+}
+.margin-item{
+    margin: 20px;
+}
+
+
+.hover:hover{
+    cursor: pointer;
+}

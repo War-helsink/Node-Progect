@@ -1,0 +1,25 @@
+.select-sort {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 40px;
+    border: 1px solid #d2d2d2;
+    box-sizing: border-box;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg fill='%233e77aa' viewBox='0 0 13 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.5 7a.956.956 0 01-.657-.256l-5.57-5.25a.839.839 0 010-1.237.968.968 0 011.312 0L6.5 4.888 11.415.257a.968.968 0 011.313 0 .839.839 0 010 1.237l-5.572 5.25A.956.956 0 016.5 7z'/%3E%3C/svg%3E");
+    background-size: 14px 9px;
+    background-repeat: no-repeat,repeat;
+    background-position: right 12px center;
+    text-align: left;
+    font-size: 14px;
+    color: #221f1f;
+    cursor: pointer;
+
+}
+.select-sort option {
+    font-weight: 400;
+}
